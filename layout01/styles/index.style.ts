@@ -19,13 +19,20 @@ export const Container = styled.main`
     margin: 0px;
     padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     
     h1 {
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 48pt;
-        height: 100%;
+    }
+
+    img {
+        z-index: 3;
     }
 `
 
