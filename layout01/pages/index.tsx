@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Cloud, Stars } from '../styles/index.style'
 import GlobalStyle from '../styles/global.style'
+import Navbar from '../components/navbar'
 
 const Index = () => {
     const [background, setBackground] = useState('')
     const [color, setColor] = useState('')
     const [TagClouds, setTagClouds] = useState(<></>)
     const [TagStars, setTagStars] = useState(<></>)
+    const [now, setNow] = useState('')
 
     const renderClouds = () => {
         const arry = []
@@ -58,20 +60,25 @@ const Index = () => {
             setBackground('#050A1C')
             setColor('#fff')
             starsInTheSky()
+            setNow('Good night :)')
         } else if (time > 6 && time < 16) {
             setBackground('linear-gradient(to bottom,#65A2FC , #C2DBE8)')
             setColor('#000')
+            setNow('Good morning :)')
         } else if (time >= 16 && time <= 18) {
             setBackground('linear-gradient(to bottom, #013ba9, #e1a0be)')
             setColor('#fff')
+            setNow('Good evening :) ')
         }
         renderClouds()
     }, [])
 
     return (
         <>
+            <Navbar textcolor={color}/>
             <Container theme={{ main: background, color: color }}>
-                <h1>Hello World</h1>
+                <img src={'/balao.png'} alt='baloons' />
+                <h1>{now}</h1>
             </Container>
             {TagClouds}
             {TagStars}
