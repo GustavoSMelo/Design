@@ -1,16 +1,13 @@
 import React from 'react'
-import { Navbar } from './styled'
+import { Header } from './styled'
 import { GiAirBalloon } from 'react-icons/gi'
-import { FaJira } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa'
 
-export const Footer = () => {
+const Navbar = (props) => {
     return (
-        <Navbar>
+        <Header textcolor={props.textcolor}>
             <figure>
-                <GiAirBalloon size={42} />
-                <figure>
-                    Ballon
-                </figure>
+                <GiAirBalloon size={62} />
             </figure>
             <nav>
                 <h1>Home</h1>
@@ -19,8 +16,12 @@ export const Footer = () => {
                 <h1>About</h1>
             </nav>
             <article>
-                <FaJira size={42}/>
+                <span><FaFacebook size={42} /></span>
+                <span><FaTwitter size={42}/></span>
+                <span><FaYoutube size={42}/></span>
             </article>
-        </Navbar>
+        </Header>
     )
 }
+
+export default Navbar
